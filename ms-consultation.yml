@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ms-consultation
+
+  data:
+    mongodb:
+      host: mongo
+      port: 27017
+      database: medical_consultations
+
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+      discovery:
+        enabled: true
+        service-name: ms-consultation
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
